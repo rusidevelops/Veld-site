@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Site | FC Veld-Plovdiv</title>
+    <link rel="html" href="">
+    <style>
+        :root {
+            --club-blue: #0000ff;
+            --club-yellow: #ffff00;
+        }
+
+        body {
+            background-color: var(--club-blue);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styling */
+        nav {
+            background-color: var(--club-yellow);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            color: var(--club-blue);
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--club-blue);
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Burger Menu Icon */
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .burger span {
+            width: 30px;
+            height: 4px;
+            background: var(--club-blue);
+            border-radius: 2px;
+            transition: 0.4s;
+        }
+
+        /* Burger Animation to 'X' */
+        .burger.toggle .line1 { transform: rotate(-45deg) translate(-6px, 6px); }
+        .burger.toggle .line2 { opacity: 0; }
+        .burger.toggle .line3 { transform: rotate(45deg) translate(-6px, -7px); }
+
+        /* Main Content */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(rgba(0,0,255,0.8), rgba(0,0,255,0.8)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000') center/cover;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+            color: var(--club-yellow);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--club-yellow);
+                width: 100%;
+                text-align: center;
+                transition: 0.5s;
+                padding: 40px 0;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">FC VELD-PLOVDIV</div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="veld.html">Home</a></li>
+            <li><a href="veld-about.html">About</a></li>
+            <li><a href="veld-contacts.html">Contact</a></li>
+        </ul>
+
+        <div class="burger" id="burger">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>THE PRIDE OF PLOVDIV</h1>
+        <p class="subtitle">Official Youth Academy & Football Club</p>
+    </header>
+
+    <script>
+        const burger = document.getElementById("burger");
+        const navLinks = document.getElementById("navLinks");
+
+        burger.addEventListener("click", () => {
+            // Toggle Nav
+            navLinks.classList.toggle("active");
+            
+            // Burger Animation
+            burger.classList.toggle("toggle");
+        });
+    </script>
+</body>
+</html>

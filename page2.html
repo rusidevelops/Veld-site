@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History | FC Veld-Plovdiv</title>
+    <style>
+        :root {
+            --club-blue: #0000ff;
+            --club-yellow: #ffff00;
+        }
+
+        body {
+            background-color: white;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: var(--club-yellow);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo { color: var(--club-blue); font-weight: 900; font-size: 1.5rem; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 30px; margin: 0; }
+        .nav-links a { text-decoration: none; color: var(--club-blue); font-weight: bold; text-transform: uppercase; }
+
+        /* Burger Menu */
+        .burger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+        .burger span { width: 30px; height: 4px; background: var(--club-blue); border-radius: 2px; transition: 0.4s; }
+        .burger.toggle .line1 { transform: rotate(-45deg) translate(-6px, 6px); }
+        .burger.toggle .line2 { opacity: 0; }
+        .burger.toggle .line3 { transform: rotate(45deg) translate(-6px, -7px); }
+
+        /* Content Sections */
+        .hero-small {
+            background: var(--club-blue);
+            color: var(--club-yellow);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+        .founder-card {
+            display: flex;
+            background: #f0f4ff;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 40px 0;
+            border-left: 10px solid var(--club-blue);
+        }
+
+        .founder-info { padding: 30px; }
+        .founder-info h3 { margin-top: 0; color: var(--club-blue); }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+            padding-left: 30px;
+            border-left: 4px solid var(--club-blue);
+        }
+
+        .event { margin-bottom: 40px; position: relative; }
+        .event::before {
+            content: '';
+            position: absolute;
+            left: -39px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: var(--club-yellow);
+            border: 4px solid var(--club-blue);
+            border-radius: 50%;
+        }
+
+        .date { font-weight: 900; color: var(--club-blue); font-size: 1.2rem; }
+
+        footer { background: var(--club-blue); color: white; text-align: center; padding: 20px; }
+
+        @media (max-width: 768px) {
+            .nav-links { position: fixed; right: -100%; top: 70px; flex-direction: column; background: var(--club-yellow); width: 100%; text-align: center; transition: 0.5s; padding: 40px 0; }
+            .nav-links.active { right: 0; }
+            .burger { display: flex; }
+            .founder-card { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="veld.html" class="logo">FC VELD-PLOVDIV</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="veld.html">Home</a></li>
+            <li><a href="veld-about.html">About</a></li>
+            <li><a href="veld-contacts.html">Contact</a></li>
+        </ul>
+        <div class="burger" id="burger">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+    </nav>
+
+    <div class="hero-small">
+        <h1>Legacy & Vision</h1>
+        <p>Founded by Plovdiv Legend Geno Dobrevski</p>
+    </div>
+
+    <div class="container">
+        <h2>Our Roots</h2>
+        <p>FC Veld-Plovdiv is more than just a football club; it is a center for excellence located at the heart of Plovdiv’s sports life—the Rowing Base. Established with a vision to build the next generation of Bulgarian football talent, the club combines professional standards with a passion for youth development.</p>
+
+        <div class="founder-card">
+            <div class="founder-info">
+                <h3>The Founder: Geno Dobrevski</h3>
+                <p>Geno Dobrevski, a legendary figure from Botev Plovdiv, founded Arena Veld to give back to the city. His experience at the highest level of football ensures that the training methodology at FC Veld is second to none.</p>
+            </div>
+        </div>
+
+        <h3>Key Milestones</h3>
+        <div class="timeline">
+            <div class="event">
+                <div class="date">September 23, 2016</div>
+                <p><strong>Grand Opening:</strong> Arena Veld officially opens with a massive youth tournament, introducing Plovdiv to a state-of-the-art football facility.</p>
+            </div>
+            <div class="event">
+                <div class="date">The Arena Today</div>
+                <p><strong>7,000 sq.m. of Excellence:</strong> Our facility features specialized pitches for F5, F7, and F9 football, providing the perfect environment for all age groups.</p>
+            </div>
+            <div class="event">
+                <div class="date">Youth Championships</div>
+                <p><strong>Competitive Spirit:</strong> FC Veld consistently participates in BFU (Bulgarian Football Union) youth championships, with strong teams in the U-14 and younger categories.</p>
+            </div>
+        </div>
+
+        <p>Located near the <strong>Youth Center at the Rowing Base</strong>, we continue to be Plovdiv’s premier destination for youth football.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 FC Veld-Plovdiv | Arena Veld-Geno Dobrevski</p>
+    </footer>
+
+    <script>
+        const burger = document.getElementById("burger");
+        const navLinks = document.getElementById("navLinks");
+
+        burger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            burger.classList.toggle("toggle");
+        });
+    </script>
+</body>
+</html>

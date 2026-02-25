@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | FC Veld-Plovdiv</title>
+    <style>
+        :root {
+            --club-blue: #0000ff;
+            --club-yellow: #ffff00;
+            --light-gray: #f4f4f4;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Navbar Logic (Matches your other pages) */
+        nav {
+            background-color: var(--club-yellow);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .logo { color: var(--club-blue); font-weight: 900; font-size: 1.5rem; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 30px; margin: 0; }
+        .nav-links a { text-decoration: none; color: var(--club-blue); font-weight: bold; text-transform: uppercase; }
+
+        /* Burger Menu Icon */
+        .burger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+        .burger span { width: 30px; height: 4px; background: var(--club-blue); border-radius: 2px; transition: 0.4s; }
+        .burger.toggle .line1 { transform: rotate(-45deg) translate(-6px, 6px); }
+        .burger.toggle .line2 { opacity: 0; }
+        .burger.toggle .line3 { transform: rotate(45deg) translate(-6px, -7px); }
+
+        /* Contact Section Layout */
+        .contact-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .info-side h2 { color: var(--club-blue); font-size: 2.5rem; margin-bottom: 10px; }
+        .info-side p { font-size: 1.1rem; color: #666; }
+
+        /* Form Styling */
+        form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--club-blue);
+        }
+
+        .text3 {
+            font-weight: bold;
+            color: var(--club-blue);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .text, .msg {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            box-sizing: border-box; /* Fixes padding issues */
+        }
+
+        .text:focus, .msg:focus {
+            outline: none;
+            border-color: var(--club-blue);
+        }
+
+        .msg { height: 120px; resize: vertical; }
+
+        .btn {
+            background-color: var(--club-blue);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #0000cc;
+            transform: translateY(-2px);
+        }
+
+        /* Map Styles */
+        .map-wrapper {
+            margin-top: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid white;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; }
+            .nav-links { position: fixed; right: -100%; top: 70px; flex-direction: column; background: var(--club-yellow); width: 100%; text-align: center; transition: 0.5s; padding: 40px 0; }
+            .nav-links.active { right: 0; }
+            .burger { display: flex; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="veld.html" class="logo">FC VELD-PLOVDIV</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="veld.html">Home</a></li>
+            <li><a href="veld-about.html">About</a></li>
+            <li><a href="veld-contact.html">Contact</a></li>
+        </ul>
+        <div class="burger" id="burger">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <div class="info-side">
+            <h2>Get in Touch</h2>
+            <p>Have questions about training times or registration? Send us a message and Coach Stefan will get back to you!</p>
+            
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.423588910404!2d24.70822637659359!3d42.14332997116401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd162c97486f3%3A0xc3b44b815616f735!2sYouth%20Center%20Plovdiv!5e0!3m2!1sen!2sbg!4v1708450000000!5m2!1sen!2sbg" 
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <p style="margin-top: 15px; font-weight: bold; color: var(--club-blue);">📍 Arena Veld - Near the Youth Center, Rowing Base</p>
+        </div>
+
+        <div>
+            <form action="https://formspree.io/f/xnnldozn" method="POST">
+                <label>
+                    <p class="text3">Your email:</p>
+                    <input class="text" type="email" name="email" placeholder="email@example.com" required>
+                </label>
+                <label>
+                    <p class="text3">Your message:</p>
+                    <textarea class="msg" name="message" placeholder="Ask about age groups, trials, or schedules..." required></textarea>
+                </label>
+                <button class="btn" type="submit">Send Message &rarr;</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const burger = document.getElementById("burger");
+        const navLinks = document.getElementById("navLinks");
+
+        burger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            burger.classList.toggle("toggle");
+        });
+    </script>
+</body>
+</html>
